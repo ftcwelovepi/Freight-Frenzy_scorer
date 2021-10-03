@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Center(
               child: Text(
-            "Freight Frenzy Scorer",
+            "Test Change",
             style: TextStyle(color: Colors.white),
           )),
           backgroundColor: Colors.red.shade900,
