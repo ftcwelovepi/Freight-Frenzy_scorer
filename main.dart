@@ -192,11 +192,13 @@ class _ScorerPageState extends State<ScorerPage> {
   String _auto = 'Autonomous Period: 0';
   var currVals = [0, 0, 0, 0, 0, 0, 0, 0];
   num Score = 0;
+  var sections = [4, 9, 14]
   num autoScore = 0;
   Object val = 0;
   Object val2 = 0;
   Object val3 = 0;
-  var sections = <num>[0, 0, 0];
+  var scores = <num>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var weights = <num>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   var sectionTitles = <String>[
     "Autonomous Period: 0",
     "Driver Control Period: 0",
@@ -733,22 +735,29 @@ class _ScorerPageState extends State<ScorerPage> {
     );
   }
 
-  void updateSection(val, section) {
+  void calculateScores(x, y){
+    counter = 0;
+    for( var i = x; i <= y; i++ ) {
+      counter += weights[i];
+    }
+    return counter;
+  }
+  void updateSection(val, section) { //really update scores
     setState(() {
-      if (sections[section] + val >= 0) {
-        sections[section] += val;
+      if (scores[section] + 1 >= 0) {
+        scores[section] += 1;
       }
-      if (section == 0) {
+      if ((section >= 0)&(section <=sections[0])) {
         sectionTitles[section] =
             "Autonomous Period: " + sections[section].toString();
       }
 
-      if (section == 1) {
+      if ((section <= sections[1])&(sections >= sections[1])) {
         sectionTitles[section] =
             "Driver Control Period: " + sections[section].toString();
       }
 
-      if (section == 2) {
+      if (section ==  {
         sectionTitles[section] = "End Game: " + sections[section].toString();
       }
     });
@@ -756,8 +765,8 @@ class _ScorerPageState extends State<ScorerPage> {
 
   void updateSection2(val, section) {
     setState(() {
-      if (sections[section] - val >= 0) {
-        sections[section] -= val;
+      if (sections[section] - 1 >= 0) {
+        sections[section] -= 1;
       }
 
       if (section == 0) {
