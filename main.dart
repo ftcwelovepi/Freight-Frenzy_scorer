@@ -192,7 +192,7 @@ class _ScorerPageState extends State<ScorerPage> {
   String _auto = 'Autonomous Period: 0';
   var currVals = [0, 0, 0, 0, 0, 0, 0, 0];
   num Score = 0;
-  var sections = [4, 9, 14]
+  var sections = [4, 9, 14];
   num autoScore = 0;
   Object val = 0;
   Object val2 = 0;
@@ -735,8 +735,8 @@ class _ScorerPageState extends State<ScorerPage> {
     );
   }
 
-  int calculateScores(x, y){
-    counter = 0;
+  num calculateScores(x, y){
+    num counter = 0;
     for( var i = x; i <= y; i++ ) {
       counter += weights[i];
     }
@@ -747,18 +747,18 @@ class _ScorerPageState extends State<ScorerPage> {
       if (scores[section] + 1 >= 0) {
         scores[section] += 1;
       }
-      if ((section >= 0)&(section <=sections[0])) {
+      if ((section >= 0)&(section <=sections.elementAt(0))) {
         sectionTitles[section] =
-            "Autonomous Period: " + calculateScores(0,sections[0]).toString();
+            "Autonomous Period: " + calculateScores(0,sections.elementAt(0)).toString();
       }
 
-      if ((section <= sections[1])&(sections >= sections[0])) {
+      if ((section <= sections.elementAt(1))&(section >= sections.elementAt(0))) {
         sectionTitles[section] =
-            "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
+            "Driver Control Period: " + calculateScores(sections.elementAt(0),sections.elementAt(1)).toString();
       }
 
-      if ((section <= sections[2])&(sections >= sections[1])) {
-        sectionTitles[section] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
+      if ((section <= sections.elementAt(2))&(section >= sections.elementAt(1))) {
+        sectionTitles[section] = "End Game: " + calculateScores(sections.elementAt(1),sections.elementAt(2)).toString();
       }
     });
   }
@@ -774,12 +774,12 @@ class _ScorerPageState extends State<ScorerPage> {
             "Autonomous Period: " + calculateScores(0,sections[0]).toString();
       }
 
-      if ((section <= sections[1])&(sections >= sections[0])) {
+      if ((section <= sections[1])&(section >= sections[0])) {
         sectionTitles[1] =
             "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
       }
 
-      if ((section <= sections[2])&(sections >= sections[1])) {
+      if ((section <= sections[2])&(section >= sections[1])) {
         sectionTitles[2] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
       }
     });
