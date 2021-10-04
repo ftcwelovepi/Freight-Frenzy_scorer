@@ -197,8 +197,8 @@ class _ScorerPageState extends State<ScorerPage> {
   Object val = 0;
   Object val2 = 0;
   Object val3 = 0;
-  var scores = <num>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  var weights = <num>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  var scores = <num>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var weights = <num>[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   var sectionTitles = <String>[
     "Autonomous Period: 0",
     "Driver Control Period: 0",
