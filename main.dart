@@ -749,16 +749,16 @@ class _ScorerPageState extends State<ScorerPage> {
       }
       if ((section >= 0)&(section <=sections[0])) {
         sectionTitles[section] =
-            "Autonomous Period: " + sections[section].toString();
+            "Autonomous Period: " + calculateScores(0,sections[0]).toString();
       }
 
-      if ((section <= sections[1])&(sections >= sections[1])) {
+      if ((section <= sections[1])&(sections >= sections[0])) {
         sectionTitles[section] =
-            "Driver Control Period: " + sections[section].toString();
+            "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
       }
 
-      if (section ==  {
-        sectionTitles[section] = "End Game: " + sections[section].toString();
+      if ((section <= sections[2])&(sections >= sections[1])) {
+        sectionTitles[section] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
       }
     });
   }
@@ -769,18 +769,18 @@ class _ScorerPageState extends State<ScorerPage> {
         sections[section] -= 1;
       }
 
-      if (section == 0) {
+      if ((section >= 0)&(section <=sections[0])) {
         sectionTitles[section] =
-            "Autonomous Period: " + sections[section].toString();
+            "Autonomous Period: " + calculateScores(0,sections[0]).toString();
       }
 
-      if (section == 1) {
+      if ((section <= sections[1])&(sections >= sections[0])) {
         sectionTitles[section] =
-            "Driver Control Period: " + sections[section].toString();
+            "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
       }
 
-      if (section == 2) {
-        sectionTitles[section] = "End Game: " + sections[section].toString();
+      if ((section <= sections[2])&(sections >= sections[1])) {
+        sectionTitles[section] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
       }
     });
   }
