@@ -735,7 +735,7 @@ class _ScorerPageState extends State<ScorerPage> {
     );
   }
 
-  void calculateScores(x, y){
+  int calculateScores(x, y){
     counter = 0;
     for( var i = x; i <= y; i++ ) {
       counter += weights[i];
