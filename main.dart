@@ -329,7 +329,7 @@ class _ScorerPageState extends State<ScorerPage> {
         new Div(
           title: "Freight in Storage Unit: ",
           callback: (int val) {
-            updateSection(val, 0);
+            updateSection(val, 1);
             updateTitle(val);
           },
           weight: 2,
@@ -337,7 +337,7 @@ class _ScorerPageState extends State<ScorerPage> {
         new Div(
             title: "Freight on Shipping Hub: ",
             callback: (int val) {
-              updateSection(val, 0);
+              updateSection(val, 2);
               updateTitle(val);
             },
             weight: 3),
@@ -368,11 +368,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val, 0);
+                          updateSection2(val, 3);
                           updateTitle2(val);
                           val = value;
                           updateTitle(val);
-                          updateSection(val, 0);
+                          updateSection(val, 3);
                         });
                       }
                     }),
@@ -385,11 +385,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val, 0);
+                          updateSection2(val, 4);
                           updateTitle2(val);
                           val = value;
                           updateTitle(val);
-                          updateSection(val, 0);
+                          updateSection(val, 4);
                         });
                       }
                     }),
@@ -402,11 +402,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val, 0);
+                          updateSection2(val, 5);
                           updateTitle2(val);
                           val = value;
                           updateTitle(val);
-                          updateSection(val, 0);
+                          updateSection(val, 5);
                         });
                       }
                     }),
@@ -419,11 +419,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val, 0);
+                          updateSection2(val, 6);
                           updateTitle2(val);
                           val = value;
                           updateTitle(val);
-                          updateSection(val, 0);
+                          updateSection(val, 6);
                         });
                       }
                     }),
@@ -455,11 +455,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val3, 0);
+                          updateSection2(val3, 7);
                           updateTitle2(val3);
                           val3 = value;
                           updateTitle(val3);
-                          updateSection(val3, 0);
+                          updateSection(val3, 7);
                         });
                       }
                     }),
@@ -472,11 +472,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val3, 0);
+                          updateSection2(val3, 8);
                           updateTitle2(val3);
                           val3 = value;
                           updateTitle(val3);
-                          updateSection(val3, 0);
+                          updateSection(val3, 8);
                         });
                       }
                     }),
@@ -499,7 +499,7 @@ class _ScorerPageState extends State<ScorerPage> {
         new Div(
           title: "Freight in Storage Unit: ",
           callback: (int val) {
-            updateSection(val, 1);
+            updateSection(val, 9);
             updateTitle(val);
           },
           weight: 1,
@@ -522,7 +522,7 @@ class _ScorerPageState extends State<ScorerPage> {
                 new Div(
                   title: "Level 1: ",
                   callback: (int val) {
-                    updateSection(val, 1);
+                    updateSection(val, 10);
                     updateTitle(val);
                   },
                   weight: 2,
@@ -530,7 +530,7 @@ class _ScorerPageState extends State<ScorerPage> {
                 new Div(
                   title: "Level 2: ",
                   callback: (int val) {
-                    updateSection(val, 1);
+                    updateSection(val, 11);
                     updateTitle(val);
                   },
                   weight: 4,
@@ -538,7 +538,7 @@ class _ScorerPageState extends State<ScorerPage> {
                 new Div(
                   title: "Level 3: ",
                   callback: (int val) {
-                    updateSection(val, 1);
+                    updateSection(val, 12);
                     updateTitle(val);
                   },
                   weight: 6,
@@ -570,7 +570,7 @@ class _ScorerPageState extends State<ScorerPage> {
         new Div(
           title: "Ducks/Elements delivered via Carousel: ",
           callback: (int val) {
-            updateSection(val, 2);
+            updateSection(val, 13);
             updateTitle(val);
           },
           weight: 6,
@@ -594,7 +594,7 @@ class _ScorerPageState extends State<ScorerPage> {
                   text: "Balanced",
                   weight: 10,
                   callback: (int val) {
-                    updateSection(val, 2);
+                    updateSection(val, 14);
                     updateTitle(val);
                   },
                 ),
@@ -602,7 +602,7 @@ class _ScorerPageState extends State<ScorerPage> {
                   text: "Capped",
                   weight: 15,
                   callback: (int val) {
-                    updateSection(val, 2);
+                    updateSection(val, 15);
                     updateTitle(val);
                   },
                 ),
@@ -627,7 +627,7 @@ class _ScorerPageState extends State<ScorerPage> {
                   text: "Tipped Towards Alliance",
                   weight: 20,
                   callback: (int val) {
-                    updateSection(val, 2);
+                    updateSection(val, 16);
                     updateTitle(val);
                   },
                 ),
@@ -660,11 +660,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val2, 2);
+                          updateSection2(val2, 17);
                           updateTitle2(val2);
                           val2 = value;
                           updateTitle(val2);
-                          updateSection(val2, 2);
+                          updateSection(val2, 17);
                         });
                       }
                     }),
@@ -677,11 +677,11 @@ class _ScorerPageState extends State<ScorerPage> {
                     onChanged: (value) {
                       if (value != null) {
                         setState(() {
-                          updateSection2(val2, 2);
+                          updateSection2(val2, 18);
                           updateTitle2(val2);
                           val2 = value;
                           updateTitle(val2);
-                          updateSection(val2, 2);
+                          updateSection(val2, 19);
                         });
                       }
                     }),
@@ -765,22 +765,22 @@ class _ScorerPageState extends State<ScorerPage> {
 
   void updateSection2(val, section) {
     setState(() {
-      if (sections[section] - 1 >= 0) {
-        sections[section] -= 1;
+      if (scores[section] - 1 >= 0) {
+        scores[section] -= 1;
       }
 
       if ((section >= 0)&(section <=sections[0])) {
-        sectionTitles[section] =
+        sectionTitles[0] =
             "Autonomous Period: " + calculateScores(0,sections[0]).toString();
       }
 
       if ((section <= sections[1])&(sections >= sections[0])) {
-        sectionTitles[section] =
+        sectionTitles[1] =
             "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
       }
 
       if ((section <= sections[2])&(sections >= sections[1])) {
-        sectionTitles[section] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
+        sectionTitles[2] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
       }
     });
   }
