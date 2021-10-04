@@ -192,7 +192,7 @@ class _ScorerPageState extends State<ScorerPage> {
   String _auto = 'Autonomous Period: 0';
   var currVals = [0, 0, 0, 0, 0, 0, 0, 0];
   num Score = 0;
-  var sections = [4, 9, 14];
+  var sections = [7, 12, 14];
   num autoScore = 0;
   Object val = 0;
   Object val2 = 0;
@@ -225,10 +225,7 @@ class _ScorerPageState extends State<ScorerPage> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       currRound.title = roundTitle;
-      currRound.score = Score.toInt();
-      currRound.autonomous = sections[0].toInt();
-      currRound.driverControl = sections[1].toInt();
-      currRound.endGame = sections[2].toInt();
+      //currRound.scores = scores; TODO FLAG
       Map jsonRound = currRound.toMap();
       String round = jsonEncode(jsonRound);
       prefs.setString(roundID.toString(), round);
@@ -735,9 +732,9 @@ class _ScorerPageState extends State<ScorerPage> {
     );
   }
 
-  num calculateScores(x, y){
+  num calculateScores(x, y){//starts at x, doesn't include y
     num counter = 0;
-    for( var i = x; i <= y; i++ ) {
+    for( var i = x; i < y; i++ ) {
       counter += weights[i];
     }
     return counter;
@@ -748,17 +745,17 @@ class _ScorerPageState extends State<ScorerPage> {
         scores[section] += 1;
       }
       if ((section >= 0)&(section <=sections.elementAt(0))) {
-        sectionTitles[section] =
+        sectionTitles[0] =
             "Autonomous Period: " + calculateScores(0,sections.elementAt(0)).toString();
       }
 
       if ((section <= sections.elementAt(1))&(section >= sections.elementAt(0))) {
-        sectionTitles[section] =
+        sectionTitles[1] =
             "Driver Control Period: " + calculateScores(sections.elementAt(0),sections.elementAt(1)).toString();
       }
 
       if ((section <= sections.elementAt(2))&(section >= sections.elementAt(1))) {
-        sectionTitles[section] = "End Game: " + calculateScores(sections.elementAt(1),sections.elementAt(2)).toString();
+        sectionTitles[2] = "End Game: " + calculateScores(sections.elementAt(1),sections.elementAt(2)).toString();
       }
     });
   }
@@ -769,18 +766,18 @@ class _ScorerPageState extends State<ScorerPage> {
         scores[section] -= 1;
       }
 
-      if ((section >= 0)&(section <=sections[0])) {
+      if ((section >= 0)&(section <sections[0])) {
         sectionTitles[0] =
             "Autonomous Period: " + calculateScores(0,sections[0]).toString();
       }
 
-      if ((section <= sections[1])&(section >= sections[0])) {
+      if ((section >= sections[0])&(section <= sections[1])) {
         sectionTitles[1] =
-            "Driver Control Period: " + calculateScores(sections[0],sections[1]).toString();
+            "Driver Control Period: " + calculateScores(sections.elementAt(0),sections.elementAt(1)).toString();
       }
 
-      if ((section <= sections[2])&(section >= sections[1])) {
-        sectionTitles[2] = "End Game: " + calculateScores(sections[1],sections[2]).toString();
+      if ((section >= sections[1])&(section < sections[2])) {
+        sectionTitles[section] = "End Game: " + calculateScores(sections.elementAt(1),sections.elementAt(2)).toString();
       }
     });
   }
